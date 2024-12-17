@@ -1,0 +1,42 @@
+{
+  "steps": [
+    {
+      "title": "Part 1 - View Commission",
+      "img": "/assets/avatar_1.jpg",
+      "name": "Lidia Johnson",
+      "role": "Head of Sales",
+      "subSteps": ["Commission Earned", "Compenstation Statement", "Analyze"]
+    },
+    {
+      "title": "Part 2 - View Setup",
+      "img": "/assets/avatar_2.jpg",
+      "name": "John Smith",
+      "role": "Head of RevOpe",
+      "subSteps": ["Create a Comp Plan", "Setup Beneficiary", "Model Plans"]
+    },
+    {
+      "title": "Part 3 - Monetize",
+      "img": "/assets/avatar_3.png",
+      "name": "John Wick",
+      "role": "External Agent",
+      "subSteps": []
+    },
+    {
+      "title": "Part 1 - Internal Management",
+      "img": "/assets/avatar_4.jpg",
+      "name": "Jackie Johnson",
+      "role": "Country Lead",
+      "subSteps": ["Add Bookings", "Run Calculation", "View Payments File"]
+    }
+  ],
+  "logo": {
+    "url": "/assets/ef-logo.png",
+    "height": 89,
+    "display": true
+  },
+  "keyboard": {
+    "nextKey": "Numpad6",
+    "previousKey": "Numpad4",
+    "toggleKey": "Escape"
+  }
+}

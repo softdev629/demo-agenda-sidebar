@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Demo Agenda Sidebar",
+  "version": "1.0",
+  "description": "Display demo agenda sidebar for internal demos",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_icon": "/assets/ef-logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "css": ["styles.css"]
+  }],
+  "web_accessible_resources": [{
+    "resources": [
+      "sidebar.html",
+      "configuration.json",
+      "assets/*"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+}

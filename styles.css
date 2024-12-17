@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#demo-agenda-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 450px;
+  height: 100vh;
+  border: none;
+  background: #f2f2f2;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 2147483647;
+}
+
+.sidebar-content {
+  padding: 0px 20px;
+  overflow-y: auto;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+  font-size: 30px;
+  font-weight: normal;
+  gap: 3.5px;
+  letter-spacing: -1px;
+}
+
+.sidebar-logo {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0 0;
+}
+
+.agenda-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.agenda-list > li {
+  padding: 15px;
+  border-bottom: none;
+  margin-top: 15px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  border-left: 5px solid #5e5e5e;
+}
+
+.agenda-list > li.current {
+  background-color: #e6ffdf;
+  border-left: 5px solid #33bb84;
+}
+
+.agenda-list > li.done {
+  background-color: #e1f7ee;
+  border-left: 5px solid #33bb8488;
+}
+
+.agenda-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.agenda-header > h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+  display: flex;
+  flex: 1;
+  gap: 8px;
+}
+
+.agenda-header > h2 > div {
+  margin-top: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.undone > .agenda-header > h2 > div > .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #333333;
+}
+
+.current > .agenda-header > h2 > div > .dot {
+  width: 28px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-image: url("./assets/dot.svg");
+}
+
+.done > .agenda-header > h2 > div > .dot {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-image: url("./assets/check_circle.svg");
+}
+
+.agenda-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+}
+
+.agenda-person-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #2e6f83;
+}
+
+.agenda-person-role {
+  font-size: 14px;
+  color: #333333;
+  font-family: "Nunito", sans-serif;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.agenda-sub-list > li {
+  margin: 8px 0 0 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: "Nunito", sans-serif;
+  color: #666666;
+  line-height: 20px;
+  background-color: transparent;
+  list-style-type: none;
+  display: flex;
+  border: none;
+  gap: 12px;
+}
+
+.agenda-sub-list > li > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.agenda-sub-list > li > span {
+  margin-top: 3px;
+}
+
+.agenda-sub-list > li > div > .dot {
+  display: inline-block;
+  border: none;
+}
+
+.agenda-sub-list > li.undone > div > .dot {
+  display: inline-block;
+  border: none;
+  width: 8px;
+  height: 8px;
+  background-color: #666666;
+  border-radius: 50%;
+}
+
+.current > .agenda-sub-list > li.current > div > .dot {
+  width: 24px;
+  height: 24px;
+  background-image: url("./assets/do_in_circkle.svg");
+}
+
+.agenda-sub-list > li.done > div > .dot {
+  width: 20px;
+  height: 20px;
+  background-image: url("./assets/check_circle-sm.svg");
+}
+
+.done > .agenda-sub-list > li.done {
+  list-style-type: none;
+  text-decoration: line-through;
+  color: #999999;
+}
+
+.sidebar-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+body.sidebar-active {
+  margin-left: 450px !important;
+  width: calc(100% - 450px) !important;
+  position: relative;
+  transition: margin-left 0.3s ease;
+}
+
+body.sidebar-active .fixed-element,
+body.sidebar-active [style*="position: fixed"],
+body.sidebar-active [style*="position:fixed"] {
+  left: 450px !important;
+  width: calc(100% - 450px) !important;
+}
